@@ -3,7 +3,7 @@ version: 2.1
 defaults: &defaults
   working_directory: ~/repo
   docker:
-    - image: circleci/node:8.9.1
+    - image: circleci/node:14.9.0
 
 jobs:
   publish-github-package:
@@ -16,8 +16,8 @@ jobs:
       - run:
           name: Authenticate with registiry
           command: |
-            echo "@PirateCatStudios:registry=https://npm.pkg.github.com" > ~/repo/.npmrc
-            echo "//npm.pkg.github.com/:+authToken=$GITHUB_PACKAGES_TOKEN" > ~/repo/.npmrc
+            echo "@PirateCatStudios:registry=https://npm.pkg.github.com" > ~/.npmrc
+            echo "//npm.pkg.github.com/:+authToken=$GITHUB_PACKAGES_TOKEN" > ~/.npmrc
             npm set @PirateCatStudios:registry https://npm.pkg.github.com
       - run:
           name: Publish package
