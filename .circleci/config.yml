@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 
 defaults: &defaults
   working_directory: ~/repo
@@ -6,7 +6,7 @@ defaults: &defaults
     - image: circleci/node:8.9.1
 
 jobs:
-  deploy:
+  publish-github-package:
     <<: *defaults
     resource_class: small
     steps:
@@ -20,11 +20,10 @@ jobs:
           command: npm publish
 
 workflows:
-  version: 2
-  deploy:
+  release-package:
     jobs:
-      - deploy:
+      - publish-github-package:
           branches:
             ignore: /.*/
-            tags:
-              only: /^(\d|[1-9]\d*)\.(\d|[1-9]\d*)\.(\d|[1-9]\d*)(-(0|[1-9A-Za-z-][0-9A-Za-z-]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(\.(0|[1-9A-Za-z-][0-9A-Za-z-]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(\+[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?$/
+          tags:
+            only: /^(\d|[1-9]\d*)\.(\d|[1-9]\d*)\.(\d|[1-9]\d*)(-(0|[1-9A-Za-z-][0-9A-Za-z-]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(\.(0|[1-9A-Za-z-][0-9A-Za-z-]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(\+[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?$/
