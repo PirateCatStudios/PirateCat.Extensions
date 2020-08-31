@@ -7,5 +7,6 @@
   "author": {
     "name": "Peter Halasz",
     "email": "pete.halasz@gmail.com"
-  }
+  },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/@PirateCatStudios" }
 }
