@@ -23,6 +23,7 @@ workflows:
   release-package:
     jobs:
       - publish-github-package:
+        filters:
           branches:
             ignore: /.*/
           tags:
