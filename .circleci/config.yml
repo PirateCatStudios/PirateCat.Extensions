@@ -12,6 +12,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/repo
+      - checkout
       - run:
           name: Authenticate with registiry
           command: echo "//npm.pkg.github.com/:+authToken=$npm_TOKEN" > ~/repo/.npmrc
