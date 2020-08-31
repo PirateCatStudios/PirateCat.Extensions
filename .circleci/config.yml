@@ -14,10 +14,10 @@ jobs:
           at: ~/repo
       - checkout
       - run:
-          name: Authenticate with registiry
+          name: Authenticate with registry
           command: |
-            echo "registry=https://npm.pkg.github.com/PirateCatStudios" > ~/repo/.npmrc
             echo "//npm.pkg.github.com/:_authToken={$GITHUB_PACKAGES_TOKEN}" > ~/repo/.npmrc
+            echo "@PirateCatStudios:registry=https://npm.pkg.github.com/" >> ~/repo/.npmrc
       - run:
           name: Publish package
           command: npm publish
