@@ -1,0 +1,11 @@
+{
+  "name": "com.piratecat.extensions",
+  "version": "0.0.1",
+  "displayName": "Pirate Cat Extensions",
+  "unity": "2020.1",
+  "description": "Various extension methods",
+  "author": {
+    "name": "Peter Halasz",
+    "email": "pete.halasz@gmail.com"
+  }
+}
