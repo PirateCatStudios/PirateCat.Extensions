@@ -17,7 +17,8 @@ jobs:
           name: Authenticate with registiry
           command: |
             echo "@PirateCatStudios:registry=https://npm.pkg.github.com" > ~/.npmrc
-            echo "//npm.pkg.github.com/:+authToken=$GITHUB_PACKAGES_TOKEN" > ~/.npmrc
+            npm set //npm.pkg.github.com/:+authToken=$GITHUB_PACKAGES_TOKEN
+            echo "always-auth = true" >> ~/.npmrc
             npm set @PirateCatStudios:registry https://npm.pkg.github.com
       - run:
           name: Publish package
