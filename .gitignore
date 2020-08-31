@@ -1,0 +1,110 @@
+# Windows
+Thumbs.db
+Thumbs.db.meta
+
+# Mac
+.DS_Store
+
+# Unity
+Library
+Temp
+AssetsLogs
+ProjectVersion.txt
+*.unitypackage
+ExportedObj/
+obj/
+*.svd
+*.userprefs
+/*.csproj
+*.pidb
+*.suo
+/*.sln
+*.user
+*.unityproj
+*.booproj
+
+# Xamarin
+obj
+bin
+*.userprefs
+*.user
+test-results
+
+# Visual Studio
+.vs
+
+# Visual Studio Code
+.vscode
+
+# Jetbrains
+.idea
+/.leu
+
+enet_log.txt
+
+/Build
+/Assets/Raw Mocap Data
+/Assets/Raw Mocap Data.meta
+*.Cache
+Assets/Plugins/ConsoleE/
+Assets/Plugins/ConsoleE.meta
+Assets/SEGI/Demo Scene/
+Assets/SEGI/Demo Scene.meta
+*.stackdump
+Builds/
+Assets/EffectExamples/
+Assets/Libraries/TextMesh Pro/Examples & Extras/
+Assets/Libraries/TextMesh Pro/Editor Resources/
+Assets/Plugins/Zenject/
+Assets/Standard Assets/
+Assets/packages/
+Assets/packages.meta
+
+Backup/
+
+Assets/Standard Assets\.meta
+Assets/Characters/DefaultAvatar\.fbm/
+Assets/Libraries/TextMesh Pro/
+Assets/Libraries/TextMesh Pro\.meta
+Assets/PostProcessing/
+Assets/PostProcessing\.meta
+Assets/EffectExamples\.meta
+Assets/Plugins\.meta
+Assets/Libraries/UnityNavMesh\.meta
+Assets/Plugins/
+Assets/Thirdparty
+Assets/Thirdparty.meta
+Assets/SEGI/
+Assets/Libraries/UnityNavMesh/
+Assets/Scenes/Test/
+Assets/Scenes/Test\.meta
+Assets/TextMesh Pro/
+Assets/TextMesh Pro\.meta
+Assets/AmplifyShaderEditor/
+Assets/AmplifyShaderEditor\.meta
+!/Assets/Bearded Man Studios Inc/
+/Assets/Bearded Man Studios Inc/*
+!Assets/Bearded Man Studios Inc/Generated
+Logs/Packages-Update\.log
+Assets/Logs/
+Assets/Logs\.meta
+Autobuild/
+*.log
+
+user\.cfg
+Assets/Gizmos/NavMeshLink Icon.png
+Assets/Gizmos/NavMeshLink Icon.png.meta
+Assets/Gizmos/NavMeshModifierVolume Icon.png
+Assets/Gizmos/NavMeshModifierVolume Icon.png.meta
+Assets/Gizmos/NavMeshSurface Icon.png
+Assets/Gizmos/NavMeshSurface Icon.png.meta
+
+Assets/BeardedManStudios/
+!Assets/BeardedManStudios/Generated
+!Assets/BeardedManStudios/Generated.meta
+
+.gitignore.meta
+package.json.meta
+.circleci.meta
+.circleci/config.yml.meta
+README.md.meta
