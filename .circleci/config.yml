@@ -16,7 +16,7 @@ jobs:
       - run:
           name: Authenticate with registry
           command: |
-            echo "//npm.pkg.github.com/:_authToken={$GITHUB_PACKAGES_TOKEN}" > ~/repo/.npmrc
+            echo "//npm.pkg.github.com/:_authToken=$GITHUB_PACKAGES_TOKEN" > ~/repo/.npmrc
             echo "@PirateCatStudios:registry=https://npm.pkg.github.com/" >> ~/repo/.npmrc
       - run:
           name: Publish package
