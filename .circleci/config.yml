@@ -30,6 +30,8 @@ workflows:
       - publish-package:
           context: jfrog-artifactory
           filters:
+            branches:
+              only: master
 #            branches:
 #              ignore: /.*/
 #            tags:
