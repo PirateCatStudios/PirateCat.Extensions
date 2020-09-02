@@ -6,7 +6,7 @@ defaults: &defaults
     - image: circleci/node:14.9.0
 
 jobs:
-  publish-github-package:
+  publish-package:
     <<: *defaults
     resource_class: small
     steps:
@@ -16,8 +16,9 @@ jobs:
       - run:
           name: Authenticate with registry
           command: |
+            echo "registry=https://piratecat.jfrog.io/artifactory/api/npm/npm/" > ~/repo/.npmrc
             echo "_auth = $JFROG_HASH" > ~/repo/.npmrc
-            echo "email = $JFROG_EMAIL" > ~/repo/.npmrc
+            echo "email = $JFROG_EMAIL" >> ~/repo/.npmrc
             echo "always-auth = true"
       - run:
           name: Publish package
@@ -26,10 +27,10 @@ jobs:
 workflows:
   release-package:
     jobs:
-      - publish-github-package:
+      - publish-package:
           context: jfrog-artifactory
           filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /^(\d|[1-9]\d*)\.(\d|[1-9]\d*)\.(\d|[1-9]\d*)(-(0|[1-9A-Za-z-][0-9A-Za-z-]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(\.(0|[1-9A-Za-z-][0-9A-Za-z-]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(\+[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?$/
+#            branches:
+#              ignore: /.*/
+#            tags:
+#              only: /^(\d|[1-9]\d*)\.(\d|[1-9]\d*)\.(\d|[1-9]\d*)(-(0|[1-9A-Za-z-][0-9A-Za-z-]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(\.(0|[1-9A-Za-z-][0-9A-Za-z-]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(\+[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?$/
