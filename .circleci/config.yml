@@ -16,8 +16,9 @@ jobs:
       - run:
           name: Authenticate with registry
           command: |
-            echo "//npm.pkg.github.com/:_authToken=$GITHUB_PACKAGES_TOKEN" > ~/repo/.npmrc
-            echo "@PirateCatStudios:registry=https://npm.pkg.github.com/" >> ~/repo/.npmrc
+            echo "_auth = $JFROG_HASH" > ~/repo/.npmrc
+            echo "email = $JFROG_EMAIL" > ~/repo/.npmrc
+            echo "always-auth = true"
       - run:
           name: Publish package
           command: npm publish
@@ -26,7 +27,7 @@ workflows:
   release-package:
     jobs:
       - publish-github-package:
-          context: github-packages
+          context: jfrog-artifactory
           filters:
             branches:
               ignore: /.*/

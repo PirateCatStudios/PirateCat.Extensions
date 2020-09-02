@@ -1,6 +1,6 @@
 {
   "name": "com.piratecat.extensions",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "displayName": "Pirate Cat Extensions",
   "unity": "2020.1",
   "description": "Various extension methods",
@@ -8,5 +8,5 @@
     "name": "Peter Halasz",
     "email": "pete.halasz@gmail.com"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/@PirateCatStudios" }
+  "publishConfig": { "registry": "https://piratecat.jfrog.io/artifactory/api/npm/npm/" }
 }
